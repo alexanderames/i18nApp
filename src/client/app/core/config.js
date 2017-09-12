@@ -38,7 +38,7 @@
       "Last_Name": "Last Name",
       "Age": "Age",
       "Location": "Location",
-      "Messages": "Messages",
+      "Messages": "72 Messages",
       "People": "People",
       "Splash_Msg": "Loading...",
       "Message_Count": "{messageCount, plural, =0{No Messages} one{1 Message} other{# Messages}",
