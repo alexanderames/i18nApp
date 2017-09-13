@@ -79,7 +79,13 @@
 
     $translateProvider.translations('en', english);
     $translateProvider.translations('es', spanish);
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.registerAvailableLanguageKeys(['en', 'es'], {
+      'en-US': 'en',
+      'es-US': 'es'
+    });
+    $translateProvider.determinePreferredLanguage();
+    console.log(navigator.language);
+    // $translateProvider.preferredLanguage('es'); <- hardcodes preferred language
 
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);

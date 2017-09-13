@@ -26,7 +26,6 @@
         $translate('Activation_Dash').then(function (translation) {
           logger.info(translation);
         });
-        logger.info('Activated Dashboard View');
       });
     }
 
