@@ -13,17 +13,20 @@
       controllerAs: 'vm',
       restrict: 'EA',
       scope: {
-        'navline': '='
+        'navline': '=',
+        'author': '='
       },
       templateUrl: 'app/layout/ht-top-nav.html'
     };
 
-    TopNavController.$inject = ['$scope'];
-
     /* @ngInject */
-    function TopNavController($scope) {
+    function TopNavController($translate) {
       var vm = this;
-      $scope.isCollapsed = true;
+      vm.changeLanguage = changeLanguage;
+
+      function changeLanguage (langKey) {
+        $translate.use(langKey);
+      }
     }
 
     return directive;
