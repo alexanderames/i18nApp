@@ -25,13 +25,8 @@
   /* @ngInject */
   function configure($logProvider, routerHelperProvider, exceptionHandlerProvider, $translateProvider) {
 
-    // $translateProvider.registerAvailableLanguageKeys(['en', 'es'], {
-    //   'en-US': 'en',
-    //   'es-US': 'es'
-    // });
-    // $translateProvider.determinePreferredLanguage();
-
     $translateProvider
+      .addInterpolation('$translateMessageFormatInterpolation')
       .preferredLanguage('en')
       .fallbackLanguage('en')
       .useStaticFilesLoader({
@@ -39,8 +34,6 @@
         suffix: '.json'
       })
       .useSanitizeValueStrategy('sanitize');
-
-    console.log(navigator.language);
 
     if ($logProvider.debugEnabled) {
       $logProvider.debugEnabled(true);
