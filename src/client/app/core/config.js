@@ -33,6 +33,7 @@
 
     $translateProvider
       .preferredLanguage('en')
+      .fallbackLanguage('en')
       .useStaticFilesLoader({
         prefix: '/app/i18n/',
         suffix: '.json'
@@ -48,4 +49,12 @@
     routerHelperProvider.configure({ docTitle: config.appTitle + ': ' });
   }
 
+  core.run(function ($rootScope) {
+    $rootScope.$on('$translateChangeSuccess', function () {
+      console.log('Translate Change Success!');
+    });
+    $rootScope.$on('$translateChangeError', function () {
+      console.log('Translate Change Error!');
+    });
+  })
 })();
